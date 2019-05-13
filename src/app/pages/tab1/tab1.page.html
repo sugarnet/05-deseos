@@ -1,18 +1,27 @@
 <ion-header no-border>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>
       Pendientes
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-list>
-  <ion-item *ngFor="let lista of listas">
-    <ion-label>
-      {{ lista.titulo }}
-    </ion-label>
-  </ion-item>
-</ion-list>
+<ion-content color="dark">
+  <ion-list color="dark">
+    <ion-item
+      color="dark"
+      *ngFor="let lista of this.listas"
+      detail
+    >
+      <ion-label>
+        {{ lista.titulo }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
 
-<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="agregar()">
+    <ion-fab-button color="tertiary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

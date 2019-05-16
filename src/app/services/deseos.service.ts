@@ -21,7 +21,7 @@ export class DeseosService {
   crearLista(titulo: string) {
     const nuevaLista = new Lista(titulo);
 
-    this.listas.push(nuevaLista);
+    this.listas.push( nuevaLista );
     this.guardarStorage();
 
     return nuevaLista.id;
@@ -41,7 +41,9 @@ export class DeseosService {
 
   cargarStorage() {
 
-    this.listas = JSON.parse(localStorage.getItem('data'));
+    if ( localStorage.getItem('data') ) {
+      this.listas = JSON.parse( localStorage.getItem('data') );
+    }
 
   }
 }

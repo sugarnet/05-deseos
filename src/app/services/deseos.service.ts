@@ -46,4 +46,9 @@ export class DeseosService {
     }
 
   }
+
+  borrarLista( lista: Lista ) {
+    this.listas = this.listas.filter(l => l.id !== lista.id);
+    this.guardarStorage();
+  }
 }

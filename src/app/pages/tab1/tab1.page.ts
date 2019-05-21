@@ -16,9 +16,7 @@ export class Tab1Page {
   constructor(
     private deseosService: DeseosService,
     private router: Router,
-    private alertController: AlertController ) {
-      this.listas = this.deseosService.getListas();
-  }
+    private alertController: AlertController ) {}
 
   agregar() {
     this.presentAlert();
@@ -53,9 +51,9 @@ export class Tab1Page {
         }
       }]
     });
-    
+
     await alert.present();
   }
-  
+
 
 }

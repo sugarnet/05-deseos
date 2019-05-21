@@ -51,4 +51,15 @@ export class DeseosService {
     this.listas = this.listas.filter(l => l.id !== lista.id);
     this.guardarStorage();
   }
+
+  editarLista( lista: Lista ) {
+
+    for (let i = 0; i < this.listas.length; i++) {
+      if (this.listas[i].id === lista.id) {
+        this.listas[i].titulo = lista.titulo;
+      }
+    }
+
+    this.guardarStorage();
+  }
 }
